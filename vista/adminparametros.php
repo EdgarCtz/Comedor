@@ -278,7 +278,7 @@ if(!isset($_SESSION['idUsuario'])){
                 </section>
 
                 <!-- Main content -->
-                <section class="content" style="background: url(/img/fondo.jpg);no-repeat;height:500px" >
+                <section class="content" id="content" style="background: url(/img/fondo.jpg);no-repeat;height:500px" >
                     
                     <div class="row">
                         <div class="box box-primary" id="loading-example">
@@ -414,7 +414,7 @@ if(!isset($_SESSION['idUsuario'])){
         <script src="../js/dataTables.bootstrap.js" type="text/javascript"></script>
 
         <script  src="../js/parametros.js" type="text/javascript"></script>
-        
+        <script src="../js/asistencia.js" type="text/javascript"></script>
         <script language="JavaScript" type="text/javascript">
             $(document).ready(function(){
                 $('#dataTables-parametros').dataTable();

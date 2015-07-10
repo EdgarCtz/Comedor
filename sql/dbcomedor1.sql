@@ -2,10 +2,10 @@
 -- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 10, 2015 at 01:21 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-07-2015 a las 09:26:11
+-- Versión del servidor: 5.6.17
+-- Versión de PHP: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `dbcomedor`
+-- Base de datos: `dbcomedor`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `asistencia`
+-- Estructura de tabla para la tabla `asistencia`
 --
 
 CREATE TABLE IF NOT EXISTS `asistencia` (
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `asistencia` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
--- Dumping data for table `asistencia`
+-- Volcado de datos para la tabla `asistencia`
 --
 
 INSERT INTO `asistencia` (`id`, `fecha`, `comensal_id`, `turno_id`) VALUES
@@ -83,7 +83,7 @@ INSERT INTO `asistencia` (`id`, `fecha`, `comensal_id`, `turno_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comensales`
+-- Estructura de tabla para la tabla `comensales`
 --
 
 CREATE TABLE IF NOT EXISTS `comensales` (
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `comensales` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 --
--- Dumping data for table `comensales`
+-- Volcado de datos para la tabla `comensales`
 --
 
 INSERT INTO `comensales` (`id`, `dni`, `ape_paterno`, `ape_maerno`, `nombre`, `codigo_comensal`, `institucion_id`, `tipocomensal_id`, `facultad`, `escuela`, `num_matricula`, `programa_id`, `fecha_exp`, `estado`, `created_at`, `updated_at`) VALUES
@@ -119,9 +119,9 @@ INSERT INTO `comensales` (`id`, `dni`, `ape_paterno`, `ape_maerno`, `nombre`, `c
 (3, '4567890', 'Valderrama', 'Valderrama', 'Edgar', '0000000001', 1, 3, NULL, NULL, NULL, 2, '2015-06-01', 1, '2015-06-01 05:00:00', '2015-06-01 05:00:00'),
 (4, '12345689', 'huaman', 'huaman', 'luis', '0000012345', 1, 3, NULL, NULL, NULL, 2, '2015-06-01', 1, '2015-06-01 05:00:00', '2015-06-01 05:00:00'),
 (13, '41526387', 'IBAÃ‘EZ', 'IBAÃ‘EZ', 'Ivette', '1000000003', 1, 3, NULL, NULL, NULL, 3, '2015-06-05', 1, '2015-06-05 05:00:00', '2015-06-05 05:00:00'),
-(14, '41526387', 'GONZALES', 'GONZALES', 'GRECIA', '1000000004', 1, 3, NULL, NULL, NULL, 3, '2015-06-05', 1, '2015-06-05 05:00:00', '2015-07-10 05:00:00'),
-(15, '74859632', 'PASCO', 'PASCO', 'FABIOLA', '1000000005', 1, 3, NULL, NULL, NULL, 3, '2015-06-05', 1, '2015-06-05 05:00:00', '2015-07-10 05:00:00'),
-(16, '70660925', 'Cruz', 'Cruz', 'Jersson Eduardo', '1000000006', 1, 3, NULL, NULL, NULL, 3, '2015-06-07', 1, '2015-06-07 05:00:00', '2015-07-10 05:00:00'),
+(14, '41526387', 'GONZALES', 'GONZALES', 'GRECIA', '1000000004', 1, 3, NULL, NULL, NULL, 3, '2015-06-05', 1, '2015-06-05 05:00:00', '2015-06-05 05:00:00'),
+(15, '74859632', 'PASCO', 'PASCO', 'FABIOLA', '1000000005', 1, 3, NULL, NULL, NULL, 3, '2015-06-05', 1, '2015-06-05 05:00:00', '2015-06-05 05:00:00'),
+(16, '70660925', 'Cruz', 'Cruz', 'Jersson Eduardo', '1000000006', 1, 3, NULL, NULL, NULL, 3, '2015-06-07', 1, '2015-06-07 05:00:00', '2015-07-08 05:00:00'),
 (17, '19033305', 'Cruz', 'Reyes', 'Angelita', '1000000007', 1, 3, NULL, NULL, NULL, 3, '2015-06-07', 1, '2015-06-07 05:00:00', '2015-06-07 05:00:00'),
 (18, '70665520', 'Garcia', 'Pelaes', 'Oscar', '1100000009', 1, 3, NULL, NULL, NULL, 3, '2015-06-08', 1, '2015-06-08 05:00:00', '2015-06-08 05:00:00'),
 (19, '70665520', 'Garcia', 'Pelaes', 'Oscar', '1000000008', 1, 3, NULL, NULL, NULL, 3, '2015-06-08', 1, '2015-06-08 05:00:00', '2015-06-08 05:00:00'),
@@ -146,7 +146,7 @@ INSERT INTO `comensales` (`id`, `dni`, `ape_paterno`, `ape_maerno`, `nombre`, `c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cronogramas_comensal`
+-- Estructura de tabla para la tabla `cronogramas_comensal`
 --
 
 CREATE TABLE IF NOT EXISTS `cronogramas_comensal` (
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `cronogramas_comensal` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `cronogramas_comensal`
+-- Volcado de datos para la tabla `cronogramas_comensal`
 --
 
 INSERT INTO `cronogramas_comensal` (`id`, `dias_habiles`, `estado_pago`, `comensal_id`, `created_at`, `updated_at`) VALUES
@@ -170,7 +170,7 @@ INSERT INTO `cronogramas_comensal` (`id`, `dias_habiles`, `estado_pago`, `comens
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cronogramas_servicio`
+-- Estructura de tabla para la tabla `cronogramas_servicio`
 --
 
 CREATE TABLE IF NOT EXISTS `cronogramas_servicio` (
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `cronogramas_servicio` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=188 ;
 
 --
--- Dumping data for table `cronogramas_servicio`
+-- Volcado de datos para la tabla `cronogramas_servicio`
 --
 
 INSERT INTO `cronogramas_servicio` (`id`, `fecha`, `estado`, `comensal_id`) VALUES
@@ -378,7 +378,7 @@ INSERT INTO `cronogramas_servicio` (`id`, `fecha`, `estado`, `comensal_id`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `escuela`
+-- Estructura de tabla para la tabla `escuela`
 --
 
 CREATE TABLE IF NOT EXISTS `escuela` (
@@ -391,7 +391,7 @@ CREATE TABLE IF NOT EXISTS `escuela` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data for table `escuela`
+-- Volcado de datos para la tabla `escuela`
 --
 
 INSERT INTO `escuela` (`id`, `descripcion`, `estado`, `facultad_id`) VALUES
@@ -406,7 +406,7 @@ INSERT INTO `escuela` (`id`, `descripcion`, `estado`, `facultad_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `facultad`
+-- Estructura de tabla para la tabla `facultad`
 --
 
 CREATE TABLE IF NOT EXISTS `facultad` (
@@ -417,7 +417,7 @@ CREATE TABLE IF NOT EXISTS `facultad` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `facultad`
+-- Volcado de datos para la tabla `facultad`
 --
 
 INSERT INTO `facultad` (`id`, `descripcion`, `estado`) VALUES
@@ -427,7 +427,7 @@ INSERT INTO `facultad` (`id`, `descripcion`, `estado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `instituciones`
+-- Estructura de tabla para la tabla `instituciones`
 --
 
 CREATE TABLE IF NOT EXISTS `instituciones` (
@@ -440,7 +440,7 @@ CREATE TABLE IF NOT EXISTS `instituciones` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data for table `instituciones`
+-- Volcado de datos para la tabla `instituciones`
 --
 
 INSERT INTO `instituciones` (`id`, `descripcion`, `estado`, `created_at`, `updated_at`) VALUES
@@ -452,7 +452,7 @@ INSERT INTO `instituciones` (`id`, `descripcion`, `estado`, `created_at`, `updat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menus`
+-- Estructura de tabla para la tabla `menus`
 --
 
 CREATE TABLE IF NOT EXISTS `menus` (
@@ -467,7 +467,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
--- Dumping data for table `menus`
+-- Volcado de datos para la tabla `menus`
 --
 
 INSERT INTO `menus` (`id`, `padre`, `nombre`, `url`, `estado`, `created_at`, `updated_at`) VALUES
@@ -485,7 +485,7 @@ INSERT INTO `menus` (`id`, `padre`, `nombre`, `url`, `estado`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Estructura de tabla para la tabla `migrations`
 --
 
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -494,7 +494,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `migrations`
+-- Volcado de datos para la tabla `migrations`
 --
 
 INSERT INTO `migrations` (`migration`, `batch`) VALUES
@@ -515,7 +515,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `parametros`
+-- Estructura de tabla para la tabla `parametros`
 --
 
 CREATE TABLE IF NOT EXISTS `parametros` (
@@ -532,7 +532,7 @@ CREATE TABLE IF NOT EXISTS `parametros` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `programas`
+-- Estructura de tabla para la tabla `programas`
 --
 
 CREATE TABLE IF NOT EXISTS `programas` (
@@ -545,7 +545,7 @@ CREATE TABLE IF NOT EXISTS `programas` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `programas`
+-- Volcado de datos para la tabla `programas`
 --
 
 INSERT INTO `programas` (`id`, `descripcion`, `estado`, `created_at`, `updated_at`) VALUES
@@ -556,7 +556,7 @@ INSERT INTO `programas` (`id`, `descripcion`, `estado`, `created_at`, `updated_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `regularizaciones`
+-- Estructura de tabla para la tabla `regularizaciones`
 --
 
 CREATE TABLE IF NOT EXISTS `regularizaciones` (
@@ -573,7 +573,7 @@ CREATE TABLE IF NOT EXISTS `regularizaciones` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Estructura de tabla para la tabla `roles`
 --
 
 CREATE TABLE IF NOT EXISTS `roles` (
@@ -586,7 +586,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `roles`
+-- Volcado de datos para la tabla `roles`
 --
 
 INSERT INTO `roles` (`id`, `descripcion`, `estado`, `created_at`, `updated_at`) VALUES
@@ -597,7 +597,7 @@ INSERT INTO `roles` (`id`, `descripcion`, `estado`, `created_at`, `updated_at`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rol_menu`
+-- Estructura de tabla para la tabla `rol_menu`
 --
 
 CREATE TABLE IF NOT EXISTS `rol_menu` (
@@ -610,7 +610,7 @@ CREATE TABLE IF NOT EXISTS `rol_menu` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data for table `rol_menu`
+-- Volcado de datos para la tabla `rol_menu`
 --
 
 INSERT INTO `rol_menu` (`id`, `rol_id`, `menu_id`) VALUES
@@ -627,7 +627,7 @@ INSERT INTO `rol_menu` (`id`, `rol_id`, `menu_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tipos_comensal`
+-- Estructura de tabla para la tabla `tipos_comensal`
 --
 
 CREATE TABLE IF NOT EXISTS `tipos_comensal` (
@@ -640,7 +640,7 @@ CREATE TABLE IF NOT EXISTS `tipos_comensal` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `tipos_comensal`
+-- Volcado de datos para la tabla `tipos_comensal`
 --
 
 INSERT INTO `tipos_comensal` (`id`, `descripcion`, `estado`, `created_at`, `updated_at`) VALUES
@@ -651,7 +651,7 @@ INSERT INTO `tipos_comensal` (`id`, `descripcion`, `estado`, `created_at`, `upda
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trabajador`
+-- Estructura de tabla para la tabla `trabajador`
 --
 
 CREATE TABLE IF NOT EXISTS `trabajador` (
@@ -667,7 +667,7 @@ CREATE TABLE IF NOT EXISTS `trabajador` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data for table `trabajador`
+-- Volcado de datos para la tabla `trabajador`
 --
 
 INSERT INTO `trabajador` (`id`, `dni`, `apellidos`, `nombres`, `correo`, `estado`, `created_at`, `updated_at`) VALUES
@@ -679,7 +679,7 @@ INSERT INTO `trabajador` (`id`, `dni`, `apellidos`, `nombres`, `correo`, `estado
 -- --------------------------------------------------------
 
 --
--- Table structure for table `turnos`
+-- Estructura de tabla para la tabla `turnos`
 --
 
 CREATE TABLE IF NOT EXISTS `turnos` (
@@ -694,7 +694,7 @@ CREATE TABLE IF NOT EXISTS `turnos` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `turnos`
+-- Volcado de datos para la tabla `turnos`
 --
 
 INSERT INTO `turnos` (`id`, `descripcion`, `hora_inicio`, `hora_fin`, `estado`, `created_at`, `updated_at`) VALUES
@@ -705,7 +705,7 @@ INSERT INTO `turnos` (`id`, `descripcion`, `hora_inicio`, `hora_fin`, `estado`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `universitario_unt`
+-- Estructura de tabla para la tabla `universitario_unt`
 --
 
 CREATE TABLE IF NOT EXISTS `universitario_unt` (
@@ -718,7 +718,7 @@ CREATE TABLE IF NOT EXISTS `universitario_unt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `universitario_unt`
+-- Volcado de datos para la tabla `universitario_unt`
 --
 
 INSERT INTO `universitario_unt` (`comensal_id`, `escuela_id`, `cod_matricula`) VALUES
@@ -732,7 +732,7 @@ INSERT INTO `universitario_unt` (`comensal_id`, `escuela_id`, `cod_matricula`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -749,14 +749,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `password`, `estado`, `created_at`, `updated_at`, `id_comensal`, `imagen`, `id_trabajador`) VALUES
 (1, 'admin', '202cb962ac59075b964b07152d234b70', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, NULL, NULL),
 (3, 'Carlos', '123456', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, NULL, NULL),
-(4, 'ivette', '202cb962ac59075b964b07152d234b70', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 13, NULL, NULL),
-(5, 'grecia', '202cb962ac59075b964b07152d234b70', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 14, NULL, NULL),
+(4, 'ivette', '123456', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 13, NULL, NULL),
+(5, 'grecia', '123', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 14, NULL, NULL),
 (6, 'fabi', '123', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 15, NULL, NULL),
 (7, 'jersson', '123456', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 16, NULL, NULL),
 (8, 'angelita', '123456', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 17, NULL, NULL),
@@ -787,7 +787,7 @@ INSERT INTO `usuarios` (`id`, `usuario`, `password`, `estado`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario_rol`
+-- Estructura de tabla para la tabla `usuario_rol`
 --
 
 CREATE TABLE IF NOT EXISTS `usuario_rol` (
@@ -797,10 +797,10 @@ CREATE TABLE IF NOT EXISTS `usuario_rol` (
   PRIMARY KEY (`id`),
   KEY `usuario_rol_usuario_id_foreign` (`usuario_id`),
   KEY `usuario_rol_rol_id_foreign` (`rol_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
 
 --
--- Dumping data for table `usuario_rol`
+-- Volcado de datos para la tabla `usuario_rol`
 --
 
 INSERT INTO `usuario_rol` (`id`, `usuario_id`, `rol_id`) VALUES
@@ -830,24 +830,21 @@ INSERT INTO `usuario_rol` (`id`, `usuario_id`, `rol_id`) VALUES
 (25, 28, 2),
 (26, 29, 2),
 (27, 30, 3),
-(28, 31, 3),
-(29, 4, 3),
-(30, 5, 3),
-(31, 6, 3);
+(28, 31, 3);
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `asistencia`
+-- Filtros para la tabla `asistencia`
 --
 ALTER TABLE `asistencia`
   ADD CONSTRAINT `asistencia_comensal_id_foreign` FOREIGN KEY (`comensal_id`) REFERENCES `comensales` (`id`),
   ADD CONSTRAINT `asistencia_turno_id_foreign` FOREIGN KEY (`turno_id`) REFERENCES `turnos` (`id`);
 
 --
--- Constraints for table `comensales`
+-- Filtros para la tabla `comensales`
 --
 ALTER TABLE `comensales`
   ADD CONSTRAINT `comensales_institucion_id_foreign` FOREIGN KEY (`institucion_id`) REFERENCES `instituciones` (`id`),
@@ -855,38 +852,38 @@ ALTER TABLE `comensales`
   ADD CONSTRAINT `comensales_tipocomensal_id_foreign` FOREIGN KEY (`tipocomensal_id`) REFERENCES `tipos_comensal` (`id`);
 
 --
--- Constraints for table `cronogramas_comensal`
+-- Filtros para la tabla `cronogramas_comensal`
 --
 ALTER TABLE `cronogramas_comensal`
   ADD CONSTRAINT `cronogramas_comensal_comensal_id_foreign` FOREIGN KEY (`comensal_id`) REFERENCES `comensales` (`id`);
 
 --
--- Constraints for table `cronogramas_servicio`
+-- Filtros para la tabla `cronogramas_servicio`
 --
 ALTER TABLE `cronogramas_servicio`
   ADD CONSTRAINT `cronogramas_servicio_comensal_id_foreign` FOREIGN KEY (`comensal_id`) REFERENCES `comensales` (`id`);
 
 --
--- Constraints for table `escuela`
+-- Filtros para la tabla `escuela`
 --
 ALTER TABLE `escuela`
   ADD CONSTRAINT `escuela_ibfk_1` FOREIGN KEY (`facultad_id`) REFERENCES `facultad` (`id`);
 
 --
--- Constraints for table `rol_menu`
+-- Filtros para la tabla `rol_menu`
 --
 ALTER TABLE `rol_menu`
   ADD CONSTRAINT `rol_menu_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`),
   ADD CONSTRAINT `rol_menu_rol_id_foreign` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`);
 
 --
--- Constraints for table `universitario_unt`
+-- Filtros para la tabla `universitario_unt`
 --
 ALTER TABLE `universitario_unt`
   ADD CONSTRAINT `uunt_ecuela_id_foreign` FOREIGN KEY (`escuela_id`) REFERENCES `escuela` (`id`);
 
 --
--- Constraints for table `usuario_rol`
+-- Filtros para la tabla `usuario_rol`
 --
 ALTER TABLE `usuario_rol`
   ADD CONSTRAINT `usuario_rol_rol_id_foreign` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`),

@@ -1204,6 +1204,16 @@ class ModeloHistorial{
     function consultarHistorialEdgar(){
         $this->cerrarAbrir();
         $codigo=$this->param['codigo'];
+        $codigoComensal=0;
+        $consultaSql2="SELECT c.id from usuarios u inner join comensales c on u.id_comensal=c.id where u.id='$codigo'";
+                                $this->result = mysql_query($consultaSql2);
+            if($this->result){
+
+                $row=mysql_fetch_row($this->result);
+                $codigoComensal=$row[0];
+            }
+
+
         $month=6;
         $year=2015;
         $first_of_month = mktime (0,0,0, $month, 1, $year);
@@ -1230,9 +1240,7 @@ class ModeloHistorial{
                 echo '<tr><td>'.$fecha.'</td>';
                         for ($u=1; $u <=3 ; $u++) { 
                             # code...
-                        
-                            
-                                $consultaSql2="SELECT a.id from asistencia a where a.turno_id=$u and a.fecha='".$fecha."' and a.comensal_id='$codigo'";
+                                $consultaSql2="SELECT a.id from asistencia a where a.turno_id=$u and a.fecha='".$fecha."' and a.comensal_id='$codigoComensal'";
                                 $this->result = mysql_query($consultaSql2);
                                 if($this->result){
 
@@ -1299,12 +1307,26 @@ class ModeloHistorial{
     function filtrar(){
         $this->cerrarAbrir();
         $codigo=$this->param['codigo'];
-        $Inicio=$this->param['inicio'];
-        $fin=$this->param['fin'];
-        $consultaSql="SELECT * FROM asistencia WHERE fecha between '".$inicio."' and '".$fin."' and comensal_id='".$codigo."'";
+        $Finicio=$this->param['inicio'];
+        $Ffin=$this->param['fin'];
+        $Finicio = date_create($Finicio);
+        $Ffin = date_create($Ffin);
+        $inicio = date_format($Finicio,'Y-m-d');
+        $fin = date_format($Ffin,'Y-m-d');
+
+        $codigoComensal=0;
+        echo $consultaSql2="SELECT c.id from usuarios u inner join comensales c on u.id_comensal=c.id where u.id='$codigo'";
+                                $this->result = mysql_query($consultaSql2);
+            if($this->result){
+
+                $row=mysql_fetch_row($this->result);
+                $codigoComensal=$row[0];
+            }
+
+        echo $consultaSql="SELECT * FROM asistencia WHERE fecha between '".$inicio."' and '".$fin."' and comensal_id='".$codigoComensal."'";
         $this->result=mysql_query($consultaSql);
         $dato=mysql_fetch_row($this->result);
-        echo "string";
+        //echo "string";
         if(mysql_num_rows($this->result)){
             echo '<tr><td>'.$dato[1].'</td>
                   <td>'.$dato[2].'</td>
