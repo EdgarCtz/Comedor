@@ -29,12 +29,24 @@ if (isset($_POST['p']))
 $Asistencia=new ModeloAsistencia();
 $res = $Asistencia->gestionar($param);
 $devuelve = "";
+$datos = $res['datos'];
+if (isset($datos[0])) {
+    # code...
+    $comensalM=$datos[0];
+}
+
 if ($res['total'] > 0 and $res['totalValidacion']==0) {
     $datos = $res['datos'];
 
     for ($i = 0; $i < count($datos); $i++) {
         $comensal = $datos[$i];
+        echo "<script>";
+
+        echo "sonidoCorrecto(".$_POST['p'].");";
+
+        echo "</script>";
         if ($_POST['p']==1) {
+
             $devuelve = '<div class="col-md-9"> 
         <div class="form-group">
                                 
@@ -44,9 +56,9 @@ if ($res['total'] > 0 and $res['totalValidacion']==0) {
                 </div>
             </div>
             <div class="form-group">
-                <label for="escuela"  style="display:none;" class="col-sm-2 control-label">Escuela</label>
+                <label for="escuela"  style="display:none;" class="col-sm-2 control-label">Código</label>
                 <div class="col-sm-10">
-                    <input type="text" style="display:none;" class="form-control" name="escuela" value="'.$comensal['escuela'].'" id="escuela" disabled>
+                    <input type="text" style="display:none;" class="form-control" name="escuela" value="'.$_POST['codigo'].'" id="escuela" disabled>
                 </div>                  
             </div>
             <div class="form-group">
@@ -92,9 +104,9 @@ if ($res['total'] > 0 and $res['totalValidacion']==0) {
                 </div>
             </div>
             <div class="form-group">
-                <label for="escuela"  style="display:none;" class="col-sm-2 control-label">Escuela</label>
+                <label for="escuela"   class="col-sm-2 control-label">Código</label>
                 <div class="col-sm-10">
-                    <input type="text" style="display:none;" class="form-control" name="escuela" value="'.$comensal['escuela'].'" id="escuela" disabled>
+                    <input type="text"  class="form-control" name="escuela" value="'.$_POST['codigo'].'" id="escuela" disabled>
                 </div>                  
             </div>
             <div class="form-group">
@@ -134,19 +146,47 @@ if ($res['total'] > 0 and $res['totalValidacion']==0) {
 }
 //Ya ha marcado asistencia para ese turno en ese dia
 if ($res['total'] > 0 and $res['totalValidacion']<>0) {
+    echo "<script>";
+
+    echo "sonidoError(".$_POST['p'].");";
+
+    echo "</script>";
     $devuelve = "<div class='alert alert-danger' role='alert'>
+                <strong>CODIGO COMENSAL: ".$_POST['codigo']."   °.°.°     NOMBRE:".$comensalM['ape_paterno'].' '.$comensalM['ape_maerno'].', '.$comensalM['nombre']." </strong><br>
               <strong>Asistencia Ya marcada!</strong> Ya se ha marcado la asistencia para este dia en este turno!. 
             </div>";
 }
 if ($res['total']==0) {
+    echo "<script>";
+
+    echo "sonidoError(".$_POST['p'].");";
+
+    echo "</script>";
     $devuelve = "<div class='alert alert-warning' role='alert'>
+                <strong>CODIGO COMENSAL: ".$_POST['codigo']."</strong><br>
               <strong>Comensal No Registrado!</strong> Su codigo de acceso no se encuentra en nuestra base de datos, probablemente su periodo de servicio ya expiro!. 
             </div>";
 }
 if ($res['opcMensaje']== -1) {
-    $devuelve = "<div class='alert alert-warning' role='alert'>
+    if (isset($comensalM['ape_paterno'])) {
+        # code...
+        echo "<script>";
+
+        echo "sonidoError(".$_POST['p'].");";
+
+        echo "</script>";
+        $devuelve = "<div class='alert alert-warning' role='alert'>
+            <strong>CODIGO COMENSAL: ".$_POST['codigo']."   °.°.°     NOMBRE:".$comensalM['ape_paterno'].' '.$comensalM['ape_maerno'].', '.$comensalM['nombre']." </strong><br>
               <strong>No Disponible!</strong> No se encuentra dentro de las horas de atencion para alguno de los turnos!. 
             </div>";
+    }else{
+        $devuelve = "<div class='alert alert-warning' role='alert'>
+            <strong>CODIGO COMENSAL: ".$_POST['codigo']."   °.°.°     No Registrado </strong><br>
+              <strong>No Disponible!</strong> No se encuentra dentro de las horas de atencion para alguno de los turnos!. 
+            </div>";
+
+    }
+    
 }
 echo $devuelve;
 

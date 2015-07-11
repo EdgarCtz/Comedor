@@ -37,11 +37,7 @@ function registrarAsistenciaComensal(p) {
     soloHoraMarcado=$('#soloHoraMarcado').val();
       $.ajax({
           type: "POST",
-<<<<<<< HEAD
-          data: {codigo,horaMarcado,soloHoraMarcado,param_opcion:'registrar'},
-=======
           data: {codigo,horaMarcado,soloHoraMarcado,p,param_opcion:'registrar'},
->>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
           url: urls,
           success: function(datos) {
               if (datos == '') {
@@ -122,4 +118,23 @@ function startTime(){
 function checkTime(i)
 {
   if (i<10) {i="0" + i;}return i;
+}
+
+function sonidoError(p){
+  if (p==1) {
+    url='sonido/error.mp3';
+  }else{
+    url='../sonido/error.mp3';
+  }
+  var audio = new Audio(url);
+  audio.play();
+}
+function sonidoCorrecto(p){
+  if (p==1) {
+    url='sonido/correcto.mp3';
+  }else{
+    url='../sonido/correcto.mp3';
+  }
+  var audio = new Audio(url);
+  audio.play();
 }
