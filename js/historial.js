@@ -71,6 +71,11 @@ function filtrar(){
      }	
 
 	if (entrar==0) {
+<<<<<<< HEAD
+=======
+		finicio=cambiarFormato(finicio);
+		ffin=cambiarFormato(ffin);
+>>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
 		$.ajax({
 			type:'POST',
 			data:{param_opcion:'filtrar',
@@ -89,6 +94,15 @@ function filtrar(){
 	
 
 }
+<<<<<<< HEAD
+=======
+
+function cambiarFormato(fecha){
+	//01/07/2015
+	var newfecha=fecha.substring(6)+'-'+fecha.substring(3,5)+'-'+fecha.substring(0,2);
+	return newfecha;
+}
+>>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
 function validaFechaDDMMAAAA(fecha){
 	var dtCh= "/";
 	var minYear=1900;

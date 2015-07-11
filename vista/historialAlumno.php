@@ -297,10 +297,14 @@ if(!isset($_SESSION['idUsuario'])){
                         
                     </div>
                     <form name="fmrhistorial" method="POST">
+<<<<<<< HEAD
                         <h3>Fecha Inicio: &nbsp;<input type="date" id="txtfechaIn">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         Fecha Fin: &nbsp;<input type="date" id="txtfechaFin">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=======
+                        
+>>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
                         <div class="btn btn-primary btn-lg" onclick="filtrar();">Filtrar</div></h3>
                         <div class="form-group">
                                 <label>Date range:</label>

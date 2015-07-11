@@ -4,8 +4,13 @@ include_once '../../modelo/Historial/modeloHistorial.php';
 
 $param = array();
 session_start();
+<<<<<<< HEAD
 $param['codigo']='4';//codigo del comensal
 $param['param_opcion']=$_SESSION['idUsuario'];//metodo de listar
+=======
+$param['codigo']=$_SESSION['idUsuario'];//codigo del comensal
+$param['param_opcion']='';//metodo de listar
+>>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
 
 
 

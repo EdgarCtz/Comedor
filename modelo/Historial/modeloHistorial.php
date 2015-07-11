@@ -1214,7 +1214,11 @@ class ModeloHistorial{
             }
 
 
+<<<<<<< HEAD
         $month=6;
+=======
+        $month=7;
+>>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
         $year=2015;
         $first_of_month = mktime (0,0,0, $month, 1, $year);
         $maxdays = date('t', $first_of_month);
@@ -1237,10 +1241,19 @@ class ModeloHistorial{
 
             if ($dia!=0) {
                 # code...
+
                 echo '<tr><td>'.$fecha.'</td>';
+                $fecha = date_create($fecha);
+
+                $fecha = date_format($fecha,'Y-m-d');
+
                         for ($u=1; $u <=3 ; $u++) { 
                             # code...
+<<<<<<< HEAD
                                 $consultaSql2="SELECT a.id from asistencia a where a.turno_id=$u and a.fecha='".$fecha."' and a.comensal_id='$codigoComensal'";
+=======
+                                 $consultaSql2="SELECT a.id from asistencia a where a.turno_id=$u and a.fecha='".$fecha."' and a.comensal_id='$codigoComensal'";
+>>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
                                 $this->result = mysql_query($consultaSql2);
                                 if($this->result){
 
@@ -1306,6 +1319,7 @@ class ModeloHistorial{
 
     function filtrar(){
         $this->cerrarAbrir();
+<<<<<<< HEAD
         $codigo=$this->param['codigo'];
         $Finicio=$this->param['inicio'];
         $Ffin=$this->param['fin'];
@@ -1316,6 +1330,16 @@ class ModeloHistorial{
 
         $codigoComensal=0;
         echo $consultaSql2="SELECT c.id from usuarios u inner join comensales c on u.id_comensal=c.id where u.id='$codigo'";
+=======
+         $codigo=$this->param['codigo'];
+         echo $inicio=$this->param['inicio'];
+         echo $fin=$this->param['fin'];
+
+         
+
+        $codigoComensal=0;
+         $consultaSql2="SELECT c.id from usuarios u inner join comensales c on u.id_comensal=c.id where u.id='$codigo'";
+>>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
                                 $this->result = mysql_query($consultaSql2);
             if($this->result){
 
@@ -1323,6 +1347,7 @@ class ModeloHistorial{
                 $codigoComensal=$row[0];
             }
 
+<<<<<<< HEAD
         echo $consultaSql="SELECT * FROM asistencia WHERE fecha between '".$inicio."' and '".$fin."' and comensal_id='".$codigoComensal."'";
         $this->result=mysql_query($consultaSql);
         $dato=mysql_fetch_row($this->result);
@@ -1331,7 +1356,86 @@ class ModeloHistorial{
             echo '<tr><td>'.$dato[1].'</td>
                   <td>'.$dato[2].'</td>
                   <td>'.$dato[3].'</td></tr>';
+=======
+        $month=7;
+        $year=2015;
+        $first_of_month = mktime (0,0,0, $month, 1, $year);
+        $maxdays = date('t', $first_of_month);
+        $fecha=date('Y-m-d');
+        $programas=array(0,0,0,0,0,0);
+        echo '<table  class="table table-bordered table-striped" id="tablita">
+                        <thead align="center">
+                            <td>FECHA</td>
+                            <td>MAÑANA</td>
+                            <td>TARDE</td>
+                            <td>NOCHE</td>
+                        </thead>
+                        <tbody align="center" >';
+
+        for ($i=1; $i <=$maxdays ; $i++) { 
+            # code...
+            $fecha=$year.'/'.$month.'/'.$i;
+            $dia=date('w',strtotime($fecha));
+
+
+            if ($dia!=0) {
+                # code...
+
+                
+                $fecha = date_create($fecha);
+
+                $fecha = date_format($fecha,'Y-m-d');
+
+                if (strtotime($inicio) <= strtotime($fecha) && strtotime($fecha) <= strtotime($fin)) {
+                        $fecha = date_create($fecha);
+                        $fecha = date_format($fecha,'Y/m/d');
+                        echo '<tr><td>'.$fecha.'</td>';
+
+                        for ($u=1; $u <=3 ; $u++) { 
+
+
+                            # code...
+                                 $consultaSql2="SELECT a.id from asistencia a where a.turno_id=$u and a.fecha='".$fecha."' and a.comensal_id='$codigoComensal'";
+                                $this->result = mysql_query($consultaSql2);
+                                if($this->result){
+
+                                        $dato=mysql_fetch_row($this->result);
+                                        if ($dato[0]) {
+                                            # code...
+                                            echo '<td>Asistió</td>';
+                                        }else{
+                                            echo '<td>Faltó</td>';
+
+                                        }
+
+                                            # code...
+                                        
+                                        
+                                        
+                                }else{
+                                    
+                                }
+
+                        }
+                        echo '</tr>';
+                       }
+             }         
+>>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
         }
+        echo '
+
+                        </tbody>
+                    </table>';
+        echo '<script src="../js/dataTables.bootstrap.js" type="text/javascript"></script>
+            <script src="../js/jquery.dataTables.js" type="text/javascript"></script>';
+            echo "<script type='text/javascript'>
+            $(document).ready(function(){
+                
+                $('#tablita').dataTable();
+
+                
+                });
+            </script>"; 
     }
 }
 

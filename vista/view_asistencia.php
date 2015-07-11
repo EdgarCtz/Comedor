@@ -9,6 +9,10 @@
                                             <div id="reloj" style="font-size:20px;color:green;position:absolute;top:200px;right:50px;"></div>
                                             <h3 style="color:blue;" align="center"><b>ASISTENCIA COMENSAL</b></h3>
                                             <form onsubmit="registrarAsistenciaComensal(<?php echo $_GET['p']?>); return false;" method="post" accept-charset="utf-8">
+<<<<<<< HEAD
+=======
+                                            
+>>>>>>> e15e9606e047fd45f96ba8f22aad4d72b57e8cfa
                                                 <input type="hidden" id="horaMarcado">
                                                 <input type="hidden" id="soloHoraMarcado">
                                                 <div class="form-group">                         
@@ -32,15 +36,16 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="escuela" class="col-sm-2 control-label">Escuela</label>
+                                                        <label for="escuela" style="display:none;" class="col-sm-2 control-label">Escuela</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control" name="escuela" id="escuela" disabled>
+                                                            <input type="text" 
+                                                             class="form-control" style="display:none;" name="escuela" id="escuela" disabled>
                                                         </div>                  
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="matricula" class="col-sm-2 control-label">Matricula</label>
+                                                        <label for="matricula" style="display:none;" class="col-sm-2 control-label">Matricula</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control" name="matricula" id="matricula" disabled>
+                                                            <input type="text"  style="display:none;"class="form-control" name="matricula" id="matricula" disabled>
                                                         </div>                              
                                                     </div>
                                                     <div class="form-group">    

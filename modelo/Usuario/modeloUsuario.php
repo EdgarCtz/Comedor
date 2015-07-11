@@ -255,7 +255,7 @@ class ModeloUsuario{
         $consultaSql="SELECT m.padre,m.nombre,m.url,r.id FROM menus m 
                         inner join rol_menu rm on m.id=rm.menu_id 
                         inner join roles r on r.id=rm.rol_id
-                        inner join usuario_rol ur on r.id=ur.rol_id WHERE ur.usuario_id='$usuario' ";
+                        inner join usuario_rol ur on r.id=ur.rol_id WHERE ur.usuario_id='$usuario' and m.estado=1 ";
         $this->result = mysql_query($consultaSql);
         if($this->result){
                 //$cont=1;
